@@ -1,0 +1,6 @@
+[submodule "OculusSDK"]
+	path = OculusSDK
+	url = https://github.com/jherico/OculusSDK.git
+[submodule "000-pythonsdk/python-ovrsdk"]
+	path = 000-pythonsdk/python-ovrsdk
+	url = https://github.com/jherico/python-ovrsdk.git
