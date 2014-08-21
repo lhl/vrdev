@@ -38,6 +38,8 @@ sudo apt-get install -y nodm
 
 # Image Processing
 sudo apt-get install -y python-opencv
+sudo apt-get install -y fswebcam
+sudo apt-get install -y cheese
 
 ###
 # See also: https://randomfoo.hackpad.com/Linux-Desktop-Tools-QFiFiyW2Wmv
