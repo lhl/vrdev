@@ -16,28 +16,29 @@ PROJECTS
 000-linux
 * Basic Linux setup
 
+001-pythonsdk
+* OculusSDK in Linux & Python
 
+002-pyopengl
+* Basic room rendering
+
+003-camera
+* See if we can get the camera working 
+
+004-leap
+* Basic Leap motion integration
 
 ROADMAP
 ---
 
-001-pythonsdk
-- OculusSDK in Linux & Python
+005-panda3d
+* Basic Panda3D room
 
-002-pyopengl
-- Basic room rendering
+006-panda3d-cef
+* CEF integration
 
-003-panda3d
-- Basic Panda3D room
+007-pywm
+* Get Python Window Manager running (based off of whimsy)
 
-004-panda3d-cef
-- CEF integration
-
-005-pywm
-- Get Python Window Manager running (based off of whimsy)
-
-006-pywm-3d
-- 3D Rendering w/ WM
-
-007-leap
-* Basic Leap integration
+008-pywm-3d
+* 3D Rendering w/ WM
