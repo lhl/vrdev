@@ -13,6 +13,7 @@ sudo apt-get install -y avahi-daemon
 sudo apt-get install -y unzip
 sudo apt-get install -y build-essential
 sudo apt-get install -y git
+sudo apt-get remove unity-lens-shopping
 
 
 # Python
