@@ -1,10 +1,38 @@
-Create a Render
+PyOpenGL
+---
+* Low Level, useful, but probably won't need it.
+* GLUT is old and crusty. Let's not use that. It also has no idea how to pick from multiple monitors
+
+Pyglet
+---
+Pyglet isn't super active but does most of what we want. It can address multiple monitors (but not get attributes besides resolution), supports shaders, etc.
+
+https://code.google.com/p/pyglet-shaders/
+http://www.pythonstuff.org/glsl/example_2_glsl_with_pyglet.html
+http://stackoverflow.com/questions/16003704/pyglet-shaders-and-glsl-layout-tag-for-color-attribute
+http://codeflow.org/entries/2009/jul/31/gletools-advanced-pyglet-utilities/
 
 
-Multiple Monitor rendering:
-http://excid3.com/blog/python-and-opengl-game-mode-on-dual-monitors-tutorial/
+GLFW
+---
+Not super pythonic, but maybe the best option? It's very active and supports all kinds of stuff (lots of good monitor stuff)
+
+http://www.glfw.org/docs/latest/monitor.html
+https://pypi.python.org/pypi/glfw/1.0.1
+https://github.com/FlorianRhiem/pyGLFW
+
+
+PyGLy
+---
+This looks pretty useful, worth a poke around for helpers
+
+https://github.com/adamlwgriffiths/PyGLy
+https://groups.google.com/forum/#!topic/pyglet-users/9LDt7MlOxBI
+
+
 
 vsync
 
 Shader
 https://github.com/elect86/JavaOculusRoomTiny/tree/master/src/roomTinySimplified
+
