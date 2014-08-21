@@ -28,11 +28,12 @@ PROJECTS
 004-leap
 * Basic Leap motion integration
 
-ROADMAP
----
-
 005-panda3d
 * Basic Panda3D room
+
+
+ROADMAP
+---
 
 006-panda3d-cef
 * CEF integration
@@ -42,3 +43,8 @@ ROADMAP
 
 008-pywm-3d
 * 3D Rendering w/ WM
+
+LICENSE
+---
+Unless otherwise noted, code is copyright Leonard Lin and licensed under
+the Apache 2.0 License
