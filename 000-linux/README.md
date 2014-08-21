@@ -34,3 +34,11 @@ git submodule update --init
 ```
 
 More cheat sheet: http://blog.jacius.info/git-submodule-cheat-sheet/
+
+
+At some point, I should probably roll in information into the dev wiki
+maybe there should be a Linux page?
+
+https://developer.oculusvr.com/forums/viewtopic.php?f=20&t=12972
+https://developer.oculusvr.com/wiki/Tutorials
+https://developer.oculusvr.com/wiki/Ubuntu_13.04
