@@ -8,10 +8,12 @@
 ##
 
 # Basics
+sudo apt-get install -y fish
 sudo apt-get install -y avahi-daemon
 sudo apt-get install -y unzip
 sudo apt-get install -y build-essential
 sudo apt-get install -y git
+
 
 # Python
 sudo apt-get install -y python-setuptools
@@ -33,6 +35,9 @@ sudo apt-get install -y qtile
 
 # nodm - future use
 sudo apt-get install -y nodm
+
+# Image Processing
+sudo apt-get install -y python-opencv
 
 ###
 # See also: https://randomfoo.hackpad.com/Linux-Desktop-Tools-QFiFiyW2Wmv
