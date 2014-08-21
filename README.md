@@ -2,6 +2,7 @@ vrdev
 =====
 
 R&D w/ the Oculus Rift.
+Development w/ Python where possible.
 
 * Python/high-level scripting
 * Windowing/running existing apps
@@ -9,11 +10,16 @@ R&D w/ the Oculus Rift.
 * Voice chat
 
 
-
-ROADMAP
+PROJECTS
 ---
 
 000-linux
+* Basic Linux setup
+
+
+
+ROADMAP
+---
 
 001-pythonsdk
 - OculusSDK in Linux & Python
@@ -32,3 +38,6 @@ ROADMAP
 
 006-pywm-3d
 - 3D Rendering w/ WM
+
+007-leap
+* Basic Leap integration
