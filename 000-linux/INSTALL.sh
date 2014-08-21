@@ -17,7 +17,10 @@ sudo apt-get install -y git
 
 # Python
 sudo apt-get install -y python-setuptools
+sudo apt-get install -y ipython-notebook
 sudo easy_install pip
+sudo pip install PyOpenGL
+sudo pip install pyglet
 
 
 # nvidia drivers
