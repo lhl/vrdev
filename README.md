@@ -13,19 +13,22 @@ R&D w/ the Oculus Rift.
 ROADMAP
 ---
 
-000-pythonsdk
+000-linux
+
+001-pythonsdk
 - OculusSDK in Linux & Python
 
-001-pyopengl
+002-pyopengl
 - Basic room rendering
 
-002-panda3d
+003-panda3d
 - Basic Panda3D room
 
-003-panda3d-cef
+004-panda3d-cef
 - CEF integration
 
-004-pywm
+005-pywm
 - Get Python Window Manager running (based off of whimsy)
 
-005-pywm-3d
+006-pywm-3d
+- 3D Rendering w/ WM
