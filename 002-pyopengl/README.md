@@ -18,8 +18,22 @@ GLFW
 Not super pythonic, but maybe the best option? It's very active and supports all kinds of stuff (lots of good monitor stuff)
 
 http://www.glfw.org/docs/latest/monitor.html
+https://github.com/glfw/glfw
 https://pypi.python.org/pypi/glfw/1.0.1
 https://github.com/FlorianRhiem/pyGLFW
+https://github.com/rougier/pyglfw
+
+Install: 
+use PPA:
+https://launchpad.net/~keithw/+archive/ubuntu/glfw3
+
+or 
+http://stackoverflow.com/questions/17768008/how-to-build-install-glfw-3-and-use-it-in-a-linux-project
+
+in utopic:
+http://packages.ubuntu.com/source/utopic/powerpc/glfw3
+
+
 
 
 PyGLy
