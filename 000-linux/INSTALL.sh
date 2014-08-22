@@ -13,6 +13,7 @@ sudo apt-get install -y avahi-daemon
 sudo apt-get install -y unzip
 sudo apt-get install -y build-essential
 sudo apt-get install -y git
+sudo apt-get install -y apt-file
 sudo apt-get remove unity-lens-shopping
 
 
@@ -22,6 +23,12 @@ sudo apt-get install -y ipython-notebook
 sudo easy_install pip
 sudo pip install PyOpenGL
 sudo pip install pyglet
+sudo pip install glfw
+sudo pip install pyglfw
+
+# Powerline
+pip install --user git+git://github.com/Lokaltog/powerline
+# https://powerline.readthedocs.org/en/latest/installation/linux.html#font-installation
 
 
 # nvidia drivers
@@ -40,10 +47,18 @@ sudo apt-get install -y qtile
 # nodm - future use
 sudo apt-get install -y nodm
 
-# Image Processing
+# webcam 
 sudo apt-get install -y python-opencv
 sudo apt-get install -y fswebcam
 sudo apt-get install -y cheese
+
+# glfw3 - this is in utopic unicorn universe
+# https://launchpad.net/~pyglfw/+archive/ubuntu/pyglfw
+sudo apt-add-repository ppa:pyglfw/pyglfw -y
+sudo apt-get update
+sudo apt-get install -y libglfw3-dev
+
+
 
 ###
 # See also: https://randomfoo.hackpad.com/Linux-Desktop-Tools-QFiFiyW2Wmv
