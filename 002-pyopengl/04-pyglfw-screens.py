@@ -1,15 +1,125 @@
 #!/usr/bin/env python
 
-
-import pyglfw.pyglfw as glfw
+from   OpenGL.GL import *
+import pyglfw.pyglfw as fw
+import sys
 
 
 def main():
-  # Initialize
-  glfw.init()
+  ### Initialize
+  fw.init()
 
-  # Monitor Info
+  ### Monitor Info
   # print_all_monitors()
+
+  ### Rift
+  monitor = get_rift()
+  curmode = monitor.video_mode
+  curmode.refresh_rate # should be 74
+
+
+  # Check for Monitor - really should check for Rift attach/detach...
+  # this doesn't work like I think it should
+  fw.Monitor.set_callback(on_monitor)
+
+  win = CbWindow(curmode.width, curmode.height, 'pyglfw', monitor)
+  win.make_current()
+
+  while not win.should_close:
+
+    # blue!
+    blue = (0.0, 0.0, 1.0, 0.0)
+    glClearColor(*blue)
+
+    glClear(GL_COLOR_BUFFER_BIT)
+
+    win.swap_buffers()
+    fw.poll_events()
+
+    if win.keys.escape:
+        win.should_close = True
+
+  fw.terminate()
+
+
+def on_monitor(_monitor, _event):
+    change_markers = {fw.Monitor.CONNECTED: '+', fw.Monitor.DISCONNECTED: '-'}
+    change = change_markers.get(_event, '~')
+    print("screen: %s %s" % (change, _monitor.name))
+
+
+
+
+
+class CbWindow(fw.Window):
+    def __init__(self, *args, **kwargs):
+        super(CbWindow, self).__init__(*args, **kwargs)
+
+        self.set_key_callback(CbWindow.key_callback)
+        self.set_char_callback(CbWindow.char_callback)
+        self.set_scroll_callback(CbWindow.scroll_callback)
+        self.set_mouse_button_callback(CbWindow.mouse_button_callback)
+        self.set_cursor_enter_callback(CbWindow.cursor_enter_callback)
+        self.set_cursor_pos_callback(CbWindow.cursor_pos_callback)
+        self.set_window_size_callback(CbWindow.window_size_callback)
+        self.set_window_pos_callback(CbWindow.window_pos_callback)
+        self.set_window_close_callback(CbWindow.window_close_callback)
+        self.set_window_refresh_callback(CbWindow.window_refresh_callback)
+        self.set_window_focus_callback(CbWindow.window_focus_callback)
+        self.set_window_iconify_callback(CbWindow.window_iconify_callback)
+        self.set_framebuffer_size_callback(CbWindow.framebuffer_size_callback)
+
+    def key_callback(self, key, scancode, action, mods):
+        print(
+            "keybrd: key=%s scancode=%s action=%s mods=%s" %
+            (key, scancode, action, mods))
+
+    def char_callback(self, char):
+        print("unichr: char=%s" % char)
+
+    def scroll_callback(self, off_x, off_y):
+        print("scroll: x=%s y=%s" % (off_x, off_y))
+
+    def mouse_button_callback(self, button, action, mods):
+        print("button: button=%s action=%s mods=%s" % (button, action, mods))
+
+    def cursor_enter_callback(self, status):
+        print("cursor: status=%s" % status)
+
+    def cursor_pos_callback(self, pos_x, pos_y):
+        print("curpos: x=%s y=%s" % (pos_x, pos_y))
+
+    def window_size_callback(self, wsz_w, wsz_h):
+        print("window: w=%s h=%s" % (wsz_w, wsz_h))
+
+    def window_pos_callback(self, pos_x, pos_y):
+        print("window: x=%s y=%s" % (pos_x, pos_y))
+
+    def window_close_callback(self):
+        print("should: %s" % self.should_close)
+
+    def window_refresh_callback(self):
+        print("redraw")
+
+    def window_focus_callback(self, status):
+        print("active: status=%s" % status)
+
+    def window_iconify_callback(self, status):
+        print("hidden: status=%s" % status)
+
+    def framebuffer_size_callback(self, fbs_x, fbs_y):
+        print("buffer: x=%s y=%s" % (fbs_x, fbs_y))
+
+
+
+  ### Swap
+  # window.swap_interval(0)
+  # window.make_current()
+  # window.swap_buffers()
+
+
+
+
 
 
 def print_all_monitors():
@@ -23,7 +133,7 @@ def print_all_monitors():
 
   '''
   print
-  for monitor in glfw.get_monitors():
+  for monitor in fw.get_monitors():
     print monitor.name
     print monitor.physical_size
     print monitor.pos
@@ -51,14 +161,14 @@ def get_rift():
   '''
 
   # For now, lets do the easiest thing and get it by physical size of DK2
-  for monitor in glfw.get_monitors():
+  for monitor in fw.get_monitors():
     if monitor.physical_size == (71, 126):
       return monitor
 
   ### TODO: DK1 physical size
 
   # If we're still here (no rift?), lets just return the primary display
-  return glfw.get_primary_monitor()
+  return fw.get_primary_monitor()
   
 
 
@@ -79,6 +189,11 @@ w, h = curmode.width, curmode.height
 window = glfw.Window(w, h, 'pyglfw')
 window.close()
 
+GLFW_STEREO   GL_FALSE  GL_TRUE or GL_FALSE
+The GLFW_STEREO hint specifies whether to use stereoscopic rendering.
+
+GLFW_REFRESH_RATE   0   0 to INT_MAX
+The GLFW_REFRESH_RATE hint specifies the desired refresh rate for full screen windows. If set to zero, the highest available refresh rate will be used. This hint is ignored for windowed mode windows.
 
 # Swap
 # makes context current
