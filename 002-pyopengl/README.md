@@ -3,6 +3,9 @@ PyOpenGL
 * Low Level, useful, but probably won't need it.
 * GLUT is old and crusty. Let's not use that. It also has no idea how to pick from multiple monitors
 
+Tutorials:
+http://pyopengl.sourceforge.net/context/tutorials/
+
 
 Pyglet
 ---
@@ -34,6 +37,9 @@ http://stackoverflow.com/questions/17768008/how-to-build-install-glfw-3-and-use-
 in utopic:
 http://packages.ubuntu.com/source/utopic/powerpc/glfw3
 
+FPS counter
+http://www.opengl-tutorial.org/miscellaneous/an-fps-counter/
+
 
 PyGLy
 ---
@@ -44,9 +50,12 @@ https://groups.google.com/forum/#!topic/pyglet-users/9LDt7MlOxBI
 
 
 
-vsync
+TODO
+---
+* Render 3d plane, shape
+* Render Stereo
+* Apply Distortion Shader
 
-Apply Distortion Shader
 Shader
 https://github.com/elect86/JavaOculusRoomTiny/tree/master/src/roomTinySimplified
 
