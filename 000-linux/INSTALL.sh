@@ -18,10 +18,12 @@ sudo apt-get remove unity-lens-shopping
 
 
 # Python
+sudo apt-get install -y python-dev
 sudo apt-get install -y python-setuptools
 sudo apt-get install -y ipython-notebook
 sudo easy_install pip
 sudo pip install PyOpenGL
+sudo pip install PyOpenGL-accelerate
 sudo pip install pyglet
 sudo pip install glfw
 sudo pip install pyglfw
