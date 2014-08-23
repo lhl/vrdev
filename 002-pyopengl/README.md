@@ -3,6 +3,7 @@ PyOpenGL
 * Low Level, useful, but probably won't need it.
 * GLUT is old and crusty. Let's not use that. It also has no idea how to pick from multiple monitors
 
+
 Pyglet
 ---
 Pyglet isn't super active but does most of what we want. It can address multiple monitors (but not get attributes besides resolution), supports shaders, etc.
@@ -34,8 +35,6 @@ in utopic:
 http://packages.ubuntu.com/source/utopic/powerpc/glfw3
 
 
-
-
 PyGLy
 ---
 This looks pretty useful, worth a poke around for helpers
@@ -47,6 +46,10 @@ https://groups.google.com/forum/#!topic/pyglet-users/9LDt7MlOxBI
 
 vsync
 
+Apply Distortion Shader
 Shader
 https://github.com/elect86/JavaOculusRoomTiny/tree/master/src/roomTinySimplified
 
+https://github.com/OculusRiftInAction/OculusRiftInAction/tree/master/examples/webgl
+
+http://schi.iteye.com/blog/1969710
