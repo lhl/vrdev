@@ -22,6 +22,7 @@ sudo apt-get remove unity-lens-shopping
 sudo apt-get install -y python-dev
 sudo apt-get install -y python-setuptools
 sudo apt-get install -y ipython-notebook
+sudo apt-get install -y python-pygame
 sudo easy_install pip
 sudo pip install PyOpenGL
 sudo pip install PyOpenGL-accelerate
@@ -60,6 +61,16 @@ sudo apt-get install -y cheese
 sudo apt-add-repository ppa:pyglfw/pyglfw -y
 sudo apt-get update
 sudo apt-get install -y libglfw3-dev
+
+# openbox - why not?
+git clone https://github.com/BurntSushi/xpybutil
+cd xpybutil
+sudo python setup.py install
+cd ..
+git clone https://github.com/BurntSushi/pytyle3
+cd pytyle3
+sudo python setup.py install
+cd ..
 
 
 
