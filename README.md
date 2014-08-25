@@ -22,14 +22,17 @@ PROJECTS
 002-pyopengl
 * Basic room rendering
 
-003-camera
-* See if we can get the camera working 
+003-app
+* Lets build app w/ shader
 
-004-leap
-* Basic Leap motion integration
+004-camera
+* See if we can get the camera working 
 
 005-panda3d
 * Basic Panda3D room
+
+006-leap
+* Basic Leap motion integration
 
 
 ROADMAP
