@@ -73,6 +73,15 @@ sudo python setup.py install
 cd ..
 
 
+# kivy
+sudo add-apt-repository ppa:kivy-team/kivy -y
+sudo apt-get update
+sudo apt-get install -y python-kivy
+
+# vispy
+pip install https://github.com/vispy/vispy/archive/master.zip
+pip install http://pyglet.googlecode.com/archive/tip.zip
+
 
 ###
 # See also: https://randomfoo.hackpad.com/Linux-Desktop-Tools-QFiFiyW2Wmv
