@@ -19,3 +19,5 @@ python makepanda/makepanda.py --everything --no-artoolkit --no-fcollada --no-fmo
 
 # install
 sudo dpkg -i panda3d1.9_1.9.0_amd64.deb
+
+# doesn't find pandagl (so is there)
