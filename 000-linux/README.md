@@ -42,3 +42,8 @@ maybe there should be a Linux page?
 https://developer.oculusvr.com/forums/viewtopic.php?f=20&t=12972
 https://developer.oculusvr.com/wiki/Tutorials
 https://developer.oculusvr.com/wiki/Ubuntu_13.04
+
+
+We may need/want to switch to Arch Linux:
+* More up-to-date kernel for latest ATI/noveau drivers
+* Wayland support
