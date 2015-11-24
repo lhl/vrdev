@@ -27,7 +27,7 @@ sunlight = Light(
 scene.add(sunlight)
 
 from euclid import Point3
-from wasabi.scenegraph import Camera
+from wasabisg.scenegraph import Camera
 
 c = Camera(
   pos=Point3(0, 1, -20),
