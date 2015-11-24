@@ -10,8 +10,10 @@ def main():
   fw.init()
 
   monitor = get_dk2()
+  if not monitor:
+    sys.exit('Could not find DK2')
   curmode = monitor.video_mode
-  curmode.refresh_rate # should be 74
+  print(curmode.refresh_rate) # should be 74
 
   win = CbWindow(960, 540, 'pyglfw')
   win.make_current()
@@ -90,10 +92,10 @@ class CbWindow(fw.Window):
 
 
 def get_dk2():
-  # For now, lets do the easiest thing and get it by physical size of DK2
   for monitor in fw.get_monitors():
     if monitor.physical_size == (71, 126):
       return monitor
+  return None
 
   # If we're still here (no rift?), lets just return the primary display
   return fw.get_primary_monitor()
