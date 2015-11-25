@@ -69,6 +69,11 @@ class GLApp():
         # Load Shader
         self.window = Window('007.vs', '007.frag', 'window.png')
 
+        # Enable Transparency
+        GL.glEnable(GL.GL_BLEND);
+        GL.glBlendFunc(GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
+
+
         # Same Data as EBO w/ Indices for buffers
         vertexData = numpy.array([
              # Positions       # Color         # Texture
