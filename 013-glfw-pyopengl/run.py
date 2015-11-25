@@ -20,7 +20,7 @@ class watcher(FileSystemEventHandler):
   def on_modified(self, event):
     global WATCH, LASTRUN
     what = 'directory' if event.is_directory else 'file'
-    if what == 'file' and event.src_path == './%s' % WATCH and time.time()-LASTRUN > 2.0:
+    if what == 'file' and event.src_path.startswith('./%s' % WATCH[:3]) and time.time()-LASTRUN > 2.0:
       LASTRUN = time.time()
       logging.info("Modified %s: %s", what, event.src_path)
 
