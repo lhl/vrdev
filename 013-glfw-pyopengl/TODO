@@ -1,0 +1,25 @@
+TASKS:
+* spherical distortion
+
+
+
+run.py
+- improve by checking doing ps, if not running then launch the app
+
+
+
+
+Design:
+
+
+Camera
+VR Cameras
+
+WorldObject
+  World
+  Window
+
+WindowManager
+  - list of windows
+
+Figure out instancing
