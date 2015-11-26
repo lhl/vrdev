@@ -49,8 +49,8 @@ class Window():
         GL.glBindTexture(GL.GL_TEXTURE_2D, self.texture)
         GL.glTexParameterf(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR)
         GL.glTexParameterf(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR_MIPMAP_LINEAR)
-        GL.glTexParameterf(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_EDGE)
-        GL.glTexParameterf(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_WRAP_T, GL.GL_CLAMP_TO_EDGE)
+        GL.glTexParameterf(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_BORDER)
+        GL.glTexParameterf(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_WRAP_T, GL.GL_CLAMP_TO_BORDER)
         GL.glTexImage2D(GL.GL_TEXTURE_2D, 0, GL.GL_RGBA, width, height, 0, GL.GL_RGBA, GL.GL_UNSIGNED_BYTE, img_data)
         GL.glGenerateMipmap(GL.GL_TEXTURE_2D)
 
@@ -63,6 +63,8 @@ class GLApp():
         self.window = None
         self.VAO = None
         self.index_size = None
+        self.lastframe = time.time()
+        self.rendertime = 0.0
 
 
     def initialize(self):
@@ -128,6 +130,8 @@ class GLApp():
 
 
     def render(self):
+        rendertime = time.time()
+
         GL.glClearColor(0, 0, 0, 1)
         GL.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT)
 
@@ -150,6 +154,10 @@ class GLApp():
             # Unbind when we finish
             GL.glBindVertexArray(0)
             GL.glUseProgram(0)
+
+        self.rendertime = 1000 * (time.time() - rendertime)
+        # print('%0.2fms' % self.rendertime)
+
 
 
     def run(self):
@@ -201,6 +209,13 @@ class GLApp():
 
         # Loop until the user closes the window
         while not glfw.window_should_close(self.w):
+            # print difference in time since start
+            # this should always be 16.6-16.7 @ 60fps
+            # print('%0.1fms' % (1000 * (time.time()-self.lastframe)))
+
+            # start of the frame
+            self.lastframe = time.time()
+
             # Render here, e.g. using pyOpenGL
             self.render()
 
@@ -215,7 +230,6 @@ class GLApp():
     
     # Callbacks
     def on_key(self, window, key, scancode, action, mods):
-        print(key)
         if key == glfw.KEY_ESCAPE and action == glfw.PRESS:
             glfw.set_window_should_close(window, 1)
 
@@ -229,3 +243,24 @@ class GLApp():
 
 if __name__ == "__main__":
     GLApp().run()
+
+
+'''
+looks pretty good, oo, py2+3, numpy
+https://github.com/adamlwgriffiths/Pyrr
+
+https://github.com/ezag/pyeuclid
+http://www.lfd.uci.edu/~gohlke/code/transformations.py.html
+
+incomplete, pure python
+https://github.com/mackst/glm
+
+pure python - crazy
+https://pypi.python.org/pypi/gem/
+
+uniTrans = glGetUniformLocation(shader.handle, "trans");
+trans = Quaternion.new_rotate_axis(math.pi, Vector3(0, 0, 1))
+trans = trans.get_matrix()[:]
+trans_ctype = (GLfloat * len(trans))(*trans)
+glUniformMatrix4fv(uniTrans, 1, GL_FALSE, trans_ctype);
+'''
