@@ -1,16 +1,12 @@
 TASKS:
-* spherical distortion
-
+* See Paper for checklist
 
 
 run.py
 - improve by checking doing ps, if not running then launch the app
 
 
-
-
 Design:
-
 
 Camera
 VR Cameras
@@ -23,3 +19,14 @@ WindowManager
   - list of windows
 
 Figure out instancing
+
+
+Occlusion Checkin
+- simple, is it in fov for raycast
+
+  - see occlusion culling/painting algo for WM
+
+  - pull updates only on those marked
+
+  Active
+  Not minimized
