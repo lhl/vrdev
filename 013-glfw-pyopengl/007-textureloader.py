@@ -11,6 +11,7 @@ from   OpenGL.GL import shaders
 from   OpenGL.raw.GL import _types
 import PIL
 from   PIL import Image
+import pyrr
 import sys
 import time
 
@@ -140,6 +141,21 @@ class GLApp():
 
         # Bind Texture
         GL.glBindTexture(GL.GL_TEXTURE_2D, self.window.texture);
+
+        # Create transformations
+        # transform = pyrr.Matrix44().identity()
+        rad = numpy.radians(glfw.get_time() * 50.0)
+        tr_translate = pyrr.matrix44.create_from_translation([0.5, -0.5, 0.0])
+        tr_scale     = pyrr.Matrix44().from_scale([1.5, 1.5, 0.5])
+        tr_rotation  = pyrr.matrix44.create_from_axis_rotation([0.0, 0.0, 1.0], rad)
+
+        # Applies right to left
+        transform = tr_scale * tr_rotation * tr_translate
+
+
+        loc = GL.glGetUniformLocation(self.window.shader, 'transform')
+        GL.glUniformMatrix4fv(loc, 1, GL.GL_FALSE, transform)
+
 
         try:
             GL.glBindVertexArray(self.VAO)

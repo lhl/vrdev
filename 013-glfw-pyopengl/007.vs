@@ -7,9 +7,13 @@ layout (location = 2) in vec2 texCoord;
 out vec3 ourColor; // color output to fragment shader
 out vec2 TexCoord;
 
+uniform mat4 transform;
+
 void main()
 {
-  gl_Position = vec4(position, 1.0);
+  gl_Position = transform * vec4(position, 1.0);
   ourColor = color; // Set the color to the input color from the vertex data
   TexCoord = texCoord;
+  // Reverse
+  // TexCoord = vec2(texCoord.x, 1.0 - texCoord.y);
 }
