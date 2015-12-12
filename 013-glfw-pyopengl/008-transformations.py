@@ -6,14 +6,17 @@ import numpy as np
 import sys
 
 # Translation
-'''
 point = Vector3([1.0, 0.0, 0.0])
-print('point: %s' % point)
+print('TRANSLATE')
+print('=========')
+print('Point:      %s' % point)
 point += [1.0, 1.0, 0.0]
 print('translated: %s' % point)
-'''
+print('')
 
 # Rotate and then Scale
+print('ROTATE + SCALE')
+print('==============')
 deg = 90.0
 rad = np.radians(deg)
 
@@ -23,11 +26,12 @@ print('Original: %s' % v)
 
 # Rotate
 rotate_mat4 = pyrr.matrix44.create_from_axis_rotation([0.0, 0.0, 1.0], rad)
+print(rotate_mat4)
 v = Matrix44(rotate_mat4) * v
-print('Rotate: %s' % v)
+print('Rotate:   %s' % v)
 
 v = Matrix44().from_scale(scale) * v
-print('Scale: %s' % v)
+print('Scale:    %s' % v)
 
 # array([[ -1.13698227e+002,   4.25087011e-303],
 #         |         [  2.88528414e-306,   3.27025015e-309]])
